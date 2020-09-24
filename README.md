@@ -1,1 +1,2 @@
-# mandersen10
+# workshop of Maddy Andersen
+### SoftDev 2020-2021
