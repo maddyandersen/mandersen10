@@ -1,0 +1,27 @@
+Team MYK(olyk) — Maddy Andersen, Kelly Huang, Yi ling Wu
+SoftDev
+K13 - Template for Success: Programming an updated Flask app based on occupations.csv
+2020-10-17
+
+Reflections after looking at each other's code from the last couple of assignments:
+- for K10 (occupy_flask_st), Yi Ling used only one function while Kelly used four
+  (or so), and Maddy used two
+- also, we all incorporated html into our app.py file for K10
+- Kelly used the built in csv function to make a dictionary, while Yi Ling and Maddy
+  made a dictionary manually reading in the file
+- all of our previous teams coded fixie.html very similarly
+
+“Egoless Programming” excerpt
+- Rather than thinking of critiques as personal attacks, it’s more beneficial to
+  have a more positive attitude about it, like Bill G. He laughed it off and the
+  code ended up being really good.
+- Accept constructive criticism and don’t be aggressive when you find errors in
+  your code.
+- Once it becomes “your own code” and you develop an attachment to it, there are
+  errors that only someone who doesn’t know the code as well can find.
+- Coding relies super heavily on collaboration, and the program can ultimately
+  only be as good as the teamwork.
+- You should write code with the mindset that someone else is going to read it.
+
+We were unable to complete part four because we spent about an hour and 15 minutes
+on the first three parts.

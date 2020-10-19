@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<!--
+  Team MYK(olyk) — Maddy Andersen, Kelly Huang, Yi Ling Wu
+  SoftDev
+  K13 - Template for Success: Programming an updated Flask app based on occupations.csv
+  2020-10-17
+ -->
+
+<html>
+
+  <head>
+    <style>
+      td {
+        border: 1px solid;
+        text-align: left;
+        padding: 6px;
+      }
+      body {
+        background-color: #ccffff;
+      }
+      div {
+        background-color: #00cccc;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      p {
+      font-size: 20px;
+      text-align: center;
+      }
+    </style>
+    <title> K13: Team MYK(olyk) </title>
+    <div><h1> K13: The Randomly Selected Occupation of Your Dreams </h1>
+  </head>
+
+  <body>
+    <h2>Team MYK(olyk) — Maddy Andersen, Kelly Huang, Yi Ling Wu</h2></div>
+    <p><b>Your randomly selected occupation is:</b> {{ occupation }}</p>
+    <table style="width:100%">
+    <tr>
+        <th>Job Class</th>
+        <th>Percentage</th>
+    </tr>
+    {% for item in range(total) %}
+    <tr>
+       <td>{{ keys[item] }}</td>
+       <td>{{ values[item] }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td><b>Total</b></td>
+      <td><b>99.8</b></td>
+    </tr>
+    </table>
+  </body>
+
+</html>
