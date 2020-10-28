@@ -1,0 +1,24 @@
+Team MYK(olyk) — Maddy Andersen, Kelly Huang, Yi ling Wu
+SoftDev
+LJ00: Le Voyage de Learnination avec Mongo, Première Phase — MongoDB Chapters 1 & 2
+2020-10-28
+
+- Database: a structured way to store and access data
+- SQL database: related tables of data
+- Mongo Database:
+    - A database without tables/without rows and columns (NoSQL)
+    - Stored in documents, which are stored in collections
+      - Document: a way to organize and store data as a set of field-value pairs
+        - <field> : <value>
+        - Field: unique identifier for a datapoint
+        - Value: data related to a given identifier
+      - Collection: An organized store of documents, usually with common fields
+        between documents
+- MongoDB Atlas
+  - Clusters: groups of servers that store your data
+  - Replica Set: a few connected MongoDB instances that store the same data
+    - Means that if one version is corrupted, the user can have a backup
+  - Instance: A single machine locally or in the cloud running a certain software
+  - Atlas manages cluster creation and allows the user to experiment with Mongo
+    features and tools
+- In-browser IDE is used to complete assignments / experiment through the course

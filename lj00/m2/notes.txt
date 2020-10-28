@@ -1,0 +1,65 @@
+Team MYK(olyk) — Maddy Andersen, Kelly Huang, Yi ling Wu
+SoftDev
+LJ00: Le Voyage de Learnination avec Mongo, Première Phase — MongoDB Chapters 1 & 2
+2020-10-28
+
+- JSON: JavaScript Standard Object Notation
+  - Format
+    - Start and end with curly braces {}
+    - Separate each key and value with a colon
+    - Separate each key:value pair with a comma
+    - “Keys” must be surrounded by quotation marks
+      -  Also called “fields”
+  - Sub-document: a field that contains a document as a value
+  - Pros: friendly, readable, familiar
+  - Cons: Text-based (parsing strings is very slow), space-consuming, only
+    supports a limited number of basic data types (String, Boolean, Number, Array)
+  - Can be read by humans and machines
+- BSON: Binary JSON
+  - Optimized for speed, space, and flexibility
+  - Supports other data types besides native JSON data types (String, Boolean,
+    Number, Array AND date, raw binary)
+  - Can be read by machines only
+  - Used by MongoDB
+- Exporting data in BSON: mongodump --uri “<Atlas Cluster UrI>”
+- Exporting data in JSON:
+  - mongoexport --uri “<Atlas Cluster URI>”
+                --uricollection=<collection name>
+		--out=<filename>.json
+- URI string: Uniform Resource Identifier
+- srv string: more specific string format that establishes a secure connection
+  between your application and MongoDB instance
+  - mongodb+srv://user:password@clusterURI.mongodb.net/database
+- Import data in BSON dump:
+  - mongorestore --uri “<Atlas Cluster URI>”
+                 --drop dump
+  - loads data from a binary database dump
+- Importing data in JSON:
+  - mongoimport --uri “<Atlas Cluster URI>”
+                --drop=<filename>.json
+- Namespace: the concatenation of the database name and collection name
+- Looked at the sample_training.zips collection & issued the following queries:
+  - {“field” : “example”}
+  - {“state”: “NY”}
+  - {“state”: “NY”, “city”: “ALBANY”}
+- Filter: narrows down specific results, query data
+- Default database is called “test”
+- “admin” is a default database that does administrative tasks (ie keeping track
+  of existing users that have access to the database)
+- “local” is another administrative database
+- show dbs (shows a list of the databases that are in a cluster)
+- use <database> (indicates you are working with the database)
+  - Points db object (used later) to correct database
+- show collections (shows the collections within the database)
+- Use a find command to query a collection:
+  - db.<collection name>.find({"state": "NY"})
+- it: iterates through a cursor (allows you to view the next “page” of results)
+- cursor: a pointer to a result set of a query
+- pointer: a direct address of the memory location
+- db.<collection name>.find(<query>).count() → returns the number of documents
+  that match the given query
+- db.<collection name>.find(<query>) → returns documents that match the given
+  query
+- db.<collection name>.find(<query>).pretty() → returns documents that match the
+  given query formatted for ease of reading
+- db.<collection name>.find({}) → returns 20 documents from a collection
