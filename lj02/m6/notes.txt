@@ -1,0 +1,46 @@
+Team MYK(olyk) — Maddy Andersen, Kelly Huang, Yi ling Wu
+SoftDev
+LJ02: Le Voyage de Learnination avec Mongo, Troisième Phase — MongoDB Chapters 5 & 6
+2020-11-25
+
+Data Explorer Feature
+- Indexes tab: A performance advisor for your database where you can view and edit your indexes for the best performance of your Atlas Cluster
+  - Can see how often an index is used, when it was created, and who created it
+- Schema Anti-Pattern tab: Gives you advice about your data model once enough queries have been issued against the collection
+- Aggregation tab: Allows us to build aggregation pipelines in the UI and see how data is transformed from one stage of the pipeline to another
+  - Can view how the data is transformed by different pipeline stages on the right side of the screen
+  - Reminder: order matters while building an aggregation pipeline
+  - Option to export the pipeline code as multiple languages (allows you to copy and paste into your application’s code)
+- Atlas Search: an advanced text search
+
+Atlas Products and Options
+- Organization: A way to group projects, teams, and billing at the highest level
+- Projects:
+  - Located within an organization
+  - Each project can have multiple Atlas Clusters within it, as long as each Cluster has a unique name
+  - Teams can be assigned to specific projects → no need to add or shuffle access on an individual user basis
+- Realm:
+  - Within a cluster
+  - Offers services that let developers build web or mobile applications, or integrate MongoDB Atlas data into an application
+  - Means developers don’t have to worry about managing or scaling servers
+- Charts:
+  - Within a cluster
+  - Allows developers to create dynamic data visualizations and use them wherever they like
+  - Each dashboard can have many charts within it
+  - Can view the aggregation pipelines used to create each chart
+
+MongoDB Compass
+- The Graphical User Interface for MongoDB (separate download)
+- Easiest way to explore and manipulate MongoDB data
+- When connecting your Cluster to Compass, make sure to add your password to the connection string
+- Admin, config, and local databases: Automatically created, used for various data management purposes → never touch unless explicitly instructed to do so
+- Can view storage size, number of collections, and number of indexes for each database within Compass
+- Can view number of documents, average document size, total document size, number of indexes, and total index size for each collection within a database
+- Documents tab: provides us with a view of the documents within the collection, gives us the ability to filter data, allows us to choose how we view the data
+- Aggregation tab: works like the aggregation tab in the Atlas Data Explorer
+- Scheme tab: takes a sample of 1000 documents and analyzes their schema → gives you an overview of the shape of your documents
+- Index tab:
+  - Default index is _id
+  - Can create indexes within the tab (can choose if you want the index to be ascending or descending)
+- Explain Plan tab: used to explain how data was found and retrieved from the database, can help you understand and improve the performance of your queries
+- Validation tab: lets you to control what is allowed and what is not allowed to be written to your database
