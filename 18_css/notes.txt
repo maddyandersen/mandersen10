@@ -1,0 +1,25 @@
+Team Lamp (Maddy Andersen and Liam Kronman)
+SoftDev
+K18: Filler and Finery — inline
+2020-01-13
+
+  - Our Lorem Ipsum generator (Hipsum): https://hipsum.co/
+  - We learned that by using text-decoration: none, we could remove the underline
+    in a hyperlink.
+  - We used trial and error to find background and font colors that matched the
+    sample png (for example, we also experimented with #cecece, #cfcfcf, #cdcdcd
+    while finding the correct color for the h1 foo box).
+  - We also played around with a lot of fonts. While we initially decided to use
+    arial, we ended up using helvetica neue (though not identical to the sample
+    png, helvetica neue is also used on the stuycs.org webpage, making it a good
+    choice).
+  - When creating our two columns in the middle section of the webpage, we decided
+    to move away from absolute measurements (200px, 600px, etc). We tried using
+    vw, but we ended up settling on percentages (24% and 76%), which are relative
+    measurements.
+  - We don't know if this is intentional, but the margin on the right side is larger
+    than the margin on the left side throughout the entire webpage. We included
+    this in our code by giving our h1 foo box, our main box, and our copyright box
+    a right margin of 7px.
+  - Once we had established the inline version, transforming our code into the
+    internal and external versions was straightforward.
