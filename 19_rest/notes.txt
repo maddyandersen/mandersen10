@@ -1,0 +1,22 @@
+Team SAM (Maddy Andersen and Saqif Abedin)
+SoftDev
+K19: A RESTful Journey Skyward — working with NASA APIs
+2021-04-06
+
+- While completing this assignment, we found the slides from class very useful.
+  We were able to use them as a guide and model our code off of them.
+- We first ran our app.py file with our api key in our https request. We then made
+  our key a variable by opening and reading in our key_nasa.txt file. We now
+  use the variable in our request instead of the actual key.
+- While the class slides used urllib2.urlopen (python2), we had to use the updated
+  version (python3): urllib.request.urlopen. Notice urllib2 --> urllib and we had
+  to include .request.
+- When first running our app.py file, we kept receiving this error:
+  urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1123)>
+  We were able to fix this by using this article:
+  https://stackoverflow.com/questions/50236117/scraping-ssl-certificate-verify-failed-error-for-http-en-wikipedia-org
+  (opened Python3.8 folder and double clicked on "Install Certificates.command" file)
+- We had to research json.load() to fully understand its purpose. It converts json
+  data into python objects.
+- While we used the APOD API in this assignment, we also explored NASA's other
+  APIs including the NASA Image and Video Library API.
