@@ -1,0 +1,101 @@
+Team LOL (Maddy Andersen, Liam Kronman)
+SoftDev
+K28 -- Bubble Bubble Toil Trouble: JS event propagation predictions
+2021-05-11
+
+v1:
+before loading index.html and clicking things
+- There will be a table with two rows. The first row will have three cells: Yoda,
+  Luke, and Obi-Wan. The second row will have three cells as well: Vader, Maul,
+  Palpatine.
+- var tds = document.getElementsByTagName('td'); will create an array consisting
+  of all of the elements that have the td tag.
+- If you click on any of the td elements, you will get an alert that will display
+  the content of the td element. For example, clicking on Vader will cause an alert
+  with Vader to appear on your screen.
+
+after loading index.html and clicking on things
+- We were correct! There's a table with two rows (with three cells each), and if
+  you click on any of the cells (which are the td elements), you get an alert with
+  the content of the td element (the name of the Star Wars character in the cell you
+  clicked on)
+
+v2:
+before loading index.html and clicking things
+- index.html is the same, so we will have the same table with two rows (with three
+  cells each).
+- This events.js is similar to the events.js in version 1. This time, however,
+  when a user clicks on a cell in the table, they will first get an alert with the
+  td content (the content of the cell). They will then get an alert listing all of the
+  cells in the row, tags (td) included. Finally, they will get an alert listing all of
+  the content of the table, tags again included.
+- For example, clicking Yoda will give:
+    1. an alert with Yoda
+    2. an alert with <td>Yoda</td> <td>Luke</td> <td>Obi-Wan</td>
+    3. an alert with <tr><td>Yoda</td> <td>Luke</td> <td>Obi-Wan</td></tr> <tr><td>Vader</td> <td>Maul</td> <td>Palpatine</td></tr>
+
+after loading index.html and clicking on things
+- We were very close!
+- For the second and third alerts, each element starts on
+  a new line. For example, if you click on Yoda, the second alert is:
+    <td>Yoda</td>
+    <td>Luke</td>
+    <td>Obi-Wan</td>
+  instead of <td>Yoda</td> <td>Luke</td> <td>Obi-Wan</td>
+- For the third alert, the first line is <tbody><tr> and the last two lines are </tr>
+  and </tbody>. We didn't include the <tbody> tag in our predictions.
+
+v3:
+before loading index.html and clicking things
+- index.html is the same, so we will have the same table with two rows (with three
+  cells each).
+- e.stopPropagation() will block alerts that are supposed to come consecutively after
+  the alert that calls e.stopPropagation().
+- v3 will produce the same results as v2, as the alert that calls e.stopPropagation()
+  is the last alert (the one that is associated with the whole table).
+
+after loading index.html and clicking on things
+- We misinterpreted the meaning of true in table.addEventListener('click', clicky, true);
+  We mistook it for an argument for the clicky function, but it actually sets capture
+  to true. The table alert becomes the most deeply nested alert, meaning that it
+  will now be the first alert.
+- If e.stopPropagation() is commented out and you click on a cell in the table,
+  you still get three alerts. Their order now, however, is different. The alerts are now:
+    1. The table alert. <tbody><tr>
+                          <td>Yoda</td>
+                          <td>Luke</td>
+                          <td>Obi-Wan</td>
+                          </tr>
+                          <tr>
+                          <td>Vader</td>
+                          <td>Maul</td>
+                          <td>Palpatine</td>
+                          </tr>
+                          </tbody>
+   2. The td alert. Yoda
+   3. The tr alert.
+        <td>Yoda</td>
+        <td>Luke</td>
+        <td>Obi-Wan</td>
+- e.stopPropagation() stopped further alerts after it was called, as we predicted.
+  The first alert called it, which in this case was the table alert. When e.stopPropagation()
+  was uncommented, the only alert after clicking on each cell was the table alert.
+
+v4:
+before loading index.html and clicking things
+- index.html is still the same, so we will have the same table with two rows (with three
+  cells each).
+- The trues in tds[x].addEventListener('click', clicky, true), tds[x].addEventListener('click', clicky, true),
+  and table.addEventListener('click', clicky, true) will set capture to true for
+  each. This means that each alert will consecutively become the most deeply nested
+  alert, reversing the order of the alerts. When e.stopPropagation()
+  is commented out, you will get three alerts:
+    1. The table alert
+    2. The tr alert
+    3. The td alert
+  in that order.
+- When e.stopPropagation() is not commented out and you click on a cell, you will
+  get the table alert only.
+
+after loading index.html and clicking on things
+- index.html performed as expected! Our predictions were correct.
