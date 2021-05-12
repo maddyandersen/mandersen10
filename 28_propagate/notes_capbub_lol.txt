@@ -51,13 +51,15 @@ before loading index.html and clicking things
   cells each).
 - e.stopPropagation() will block alerts that are supposed to come consecutively after
   the alert that calls e.stopPropagation().
+- The boolean is an argument for the clicky function and will impact whether or uncommented
+  e.stopPropagation() is called.
 - v3 will produce the same results as v2, as the alert that calls e.stopPropagation()
   is the last alert (the one that is associated with the whole table).
 
 after loading index.html and clicking on things
-- We misinterpreted the meaning of true in table.addEventListener('click', clicky, true);
+- We misinterpreted the meaning of the boolean in table.addEventListener('click', clicky, true);
   We mistook it for an argument for the clicky function, but it actually sets capture
-  to true. The table alert becomes the most deeply nested alert, meaning that it
+  to true/false. If true, the table alert becomes the most deeply nested alert, meaning that it
   will now be the first alert.
 - If e.stopPropagation() is commented out and you click on a cell in the table,
   you still get three alerts. Their order now, however, is different. The alerts are now:
@@ -85,10 +87,10 @@ v4:
 before loading index.html and clicking things
 - index.html is still the same, so we will have the same table with two rows (with three
   cells each).
-- The trues in tds[x].addEventListener('click', clicky, true), tds[x].addEventListener('click', clicky, true),
-  and table.addEventListener('click', clicky, true) will set capture to true for
-  each. This means that each alert will consecutively become the most deeply nested
-  alert, reversing the order of the alerts. When e.stopPropagation()
+- (What effect does the boolean arg have in each?) The trues in tds[x].addEventListener('click', clicky, true),
+  tds[x].addEventListener('click', clicky, true), and table.addEventListener('click', clicky, true)
+  will set capture to true for each. This means that each alert will consecutively
+  become the most deeply nested alert, reversing the order of the alerts. When e.stopPropagation()
   is commented out, you will get three alerts:
     1. The table alert
     2. The tr alert
